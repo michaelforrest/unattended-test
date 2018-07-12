@@ -41,6 +41,12 @@ export class PlayerStats extends Component{
           {player.firstname} {player.lastname}
         </h2>
         <div className="last">
+          {/*
+            FIXME: Normally I would ask somebody what "last" means in this data.
+            However since it's the evening and I don't expect a quick response
+            I'm going to guess that it's a list of recent games where 1 or 0
+            means that they won or lost that game. Will show this data for comparison.
+              */}
           Last:
           {player.data.last.map((won,index) =>
             <span key={index}>{won ? "✓" : "⨯"}</span>
