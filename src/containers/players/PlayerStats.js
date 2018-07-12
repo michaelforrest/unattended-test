@@ -40,10 +40,10 @@ export class PlayerStats extends Component{
           />
           {player.firstname} {player.lastname}
         </h2>
-        <div class="last">
+        <div className="last">
           Last:
-          {player.data.last.map(won =>
-            <span>{won ? "✓" : "⨯"}</span>
+          {player.data.last.map((won,index) =>
+            <span key={index}>{won ? "✓" : "⨯"}</span>
           )}
         </div>
       </div>

@@ -27,10 +27,8 @@ export default (state=initialState,action)=>{
 }
 
 export const loadPlayers = () => async dispatch => {
-  console.log("loding");
   try{
     const response = await fetch(PLAYER_DATA_URL)
-    console.log(response);
     const json = await response.json()
     const players = json.players
     dispatch({

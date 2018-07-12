@@ -10,13 +10,14 @@ class Home extends Component{
   }
 
   render(){
-    const {players} = this.props
+    const {players,loading} = this.props
     console.log("players", players);
     return (<div>
       <h1>Hello!</h1>
       <p>Here are some player stats.</p>
-      {players.map(player =>
+      {loading ? "Loading..." : players.map((player,index) =>
         <PlayerStats
+          key={index}
           player={player}
         />)}
 
@@ -25,4 +26,5 @@ class Home extends Component{
 }
 export default connect(state => ({
   players: state.players.all,
+  loading: state.players.loading,
 }))(Home)
